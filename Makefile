@@ -8,7 +8,7 @@ install:
 test:
 	go test -timeout 30s -v ./...
 
-generated:
+generate:
 	hack/make-rules/generated.sh
 
 fmt:
