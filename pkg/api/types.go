@@ -61,6 +61,7 @@ type Cluster struct {
 	// Cluster config. For example, the name field of the top-level Cluster object
 	// wins over one specified in the Kind config.
 	KindV1Alpha4Cluster *v1alpha4.Cluster `json:"kindV1Alpha4Cluster,omitempty" yaml:"kindV1Alpha4Cluster,omitempty"`
+	KindRetain          bool              `json:"kindRetain,omitempty" yaml:"kindRetain,omitempty"`
 
 	// The Minikube cluster config. Only applicable for clusters with product: minikube.
 	Minikube *MinikubeCluster `json:"minikube,omitempty" yaml:"minikube,omitempty"`

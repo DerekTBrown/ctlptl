@@ -139,6 +139,10 @@ func (a *kindAdmin) Create(ctx context.Context, desired *api.Cluster, registry *
 		args = append(args, "--image", node)
 	}
 
+	if desired.KindRetainContainers {
+		args = append(args, "--retain")
+	}
+
 	kindConfig := a.kindClusterConfig(desired, registry, registryAPI)
 	buf := bytes.NewBuffer(nil)
 	encoder := yaml.NewEncoder(buf)
