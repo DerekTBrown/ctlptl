@@ -141,8 +141,8 @@ func (a *kindAdmin) Create(ctx context.Context, desired *api.Cluster, registry *
 
 	if desired.KindRetain {
 		args = append(args, "--retain", "-v", "3")
-		args = append(args, "--wait", "2m")
 	}
+	args = append(args, "--wait", "2m")
 
 	kindConfig := a.kindClusterConfig(desired, registry, registryAPI)
 	buf := bytes.NewBuffer(nil)
